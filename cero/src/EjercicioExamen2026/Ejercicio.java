@@ -19,6 +19,7 @@ public class Ejercicio {
         double mejoresVueltas = 0;
         double media = 0;
 
+
         //Parte 1
 
         System.out.println("Introduce el nombre del piloto: ");
@@ -74,6 +75,11 @@ public class Ejercicio {
 
         //Parte 4
 
+        if (vueltas % 2 == 0 && media <= tiempoObjetivo && (vueltas / 2) >= mejoresVueltas ){
+
+            System.out.println("El piloto esta preparado para correr");
+
+        }
 
 
     }
