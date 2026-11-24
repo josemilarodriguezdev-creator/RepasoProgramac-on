@@ -1,4 +1,4 @@
-package EjercicioExamen2026;
+package EjercicioExamenTema12026;
 
 import java.util.Scanner;
 
@@ -16,7 +16,7 @@ public class Ejercicio {
         double suma = 0;
         double mejorTiempo = Double.MAX_VALUE;
         int mejorVuelta = 0;
-        double mejoresVueltas = 0;
+        int mejoresVueltas = 0;
         double media = 0;
 
 
@@ -47,7 +47,7 @@ public class Ejercicio {
                 if (mejorTiempo > tiemporPorVuelta){
                     mejorTiempo = tiemporPorVuelta;
                     mejorVuelta = i+1;
-                } else if (tiemporPorVuelta < tiempoObjetivo) {
+                } if (tiemporPorVuelta < tiempoObjetivo) {
                     mejoresVueltas ++;
                 }
 
@@ -69,16 +69,18 @@ public class Ejercicio {
         System.out.println("----Informe----");
         System.out.println("Piloto: " + nombre);
         System.out.println("tiempo total de la tanda: " + suma + " segundos");
-        System.out.println("El tiempo medio por vuelta es: " + media + " segundos");
+        System.out.printf("El tiempo medio por vuelta es: %.2f segundos%n", media);
         System.out.println("El mejor tiempo conseguido es: " + mejorTiempo + " segundos y lo consiguio en la vuelta " + mejorVuelta);
         System.out.println("las vueltas que mejoraron al tiempo objetivo fueron: " + mejoresVueltas);
 
         //Parte 4
 
-        if (vueltas % 2 == 0 && media <= tiempoObjetivo && (vueltas / 2) >= mejoresVueltas ){
+        if (media <= tiempoObjetivo && vueltas <= 2 * mejoresVueltas ){
 
             System.out.println("El piloto esta preparado para correr");
 
+        }else {
+            System.out.println("Necesita otra tanda de entrenamiento");
         }
 
 
